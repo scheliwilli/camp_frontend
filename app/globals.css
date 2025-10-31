@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Century Gothic stack */
+@font-face {
+  font-family: "Century Gothic";
+  src: local("Century Gothic");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #0f0f10;
+  --panel: #1c1c1f;
+  --panel-2: #232327;
+  --accent: #7fb777; /* green from mockups */
+}
+
+.font-century {
+  font-family: "Century Gothic", "Apple SD Gothic Neo", "Segoe UI", Tahoma,
+    sans-serif;
+}
+
+/* Scrollbar subtle */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: #3a3a40; border-radius: 9999px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+.glass {
+  background: color-mix(in oklab, #1f1f22 85%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2 font-semibold transition-colors;
+}
+.btn-primary {
+  @apply btn bg-[color:var(--accent)] text-black hover:bg-green-400/80;
+}
+.btn-secondary {
+  @apply btn bg-zinc-700 hover:bg-zinc-600;
+}
+
+.input {
+  @apply w-full rounded-2xl bg-zinc-700/60 border border-zinc-600/60 px-4 py-3 text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)];
+}
+
+.card {
+  @apply rounded-3xl bg-zinc-800/70 border border-zinc-700/50 shadow-xl;
+}
+
+
