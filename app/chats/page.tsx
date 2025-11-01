@@ -44,7 +44,7 @@ export default function ChatsPage() {
               <div className="flex items-center justify-between">
                 <div className="font-semibold">{c.user_name}</div>
                 {c.unread_count ? (
-                  <span className="ml-2 text-xs bg-[color:var(--accent)] text-black rounded-full px-2 py-0.5">
+                  <span className="ml-2 text-xs text-black rounded-full px-2 py-0.5" style={{ backgroundColor: 'var(--accent)' }}>
                     {c.unread_count}
                   </span>
                 ) : null}
@@ -64,5 +64,3 @@ export default function ChatsPage() {
     </div>
   );
 }
-
-
