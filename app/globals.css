@@ -32,21 +32,60 @@
 }
 
 .btn {
-  @apply inline-flex items-center justify-center rounded-full px-5 py-2 font-semibold transition-colors;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding-left: 1.25rem; /* px-5 */
+  padding-right: 1.25rem;
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem;
+  font-weight: 600; /* font-semibold */
+  transition: background-color .2s, color .2s, border-color .2s;
 }
 .btn-primary {
-  @apply btn bg-[color:var(--accent)] text-black hover:bg-green-400/80;
+  /* base btn */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding-left: 1.25rem; padding-right: 1.25rem; padding-top: .5rem; padding-bottom: .5rem;
+  font-weight: 600; transition: background-color .2s, color .2s, border-color .2s;
+  color: #000; /* text-black */
+  background-color: var(--accent);
 }
+.btn-primary:hover { background-color: color-mix(in oklab, var(--accent) 80%, black 20%); }
 .btn-secondary {
-  @apply btn bg-zinc-700 hover:bg-zinc-600;
+  /* base btn */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding-left: 1.25rem; padding-right: 1.25rem; padding-top: .5rem; padding-bottom: .5rem;
+  font-weight: 600; transition: background-color .2s, color .2s, border-color .2s;
+  background-color: #3f3f46; /* zinc-700 */
 }
+.btn-secondary:hover { background-color: #52525b; /* zinc-600 */ }
 
 .input {
-  @apply w-full rounded-2xl bg-zinc-700/60 border border-zinc-600/60 px-4 py-3 text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)];
+  width: 100%;
+  border-radius: 1rem; /* rounded-2xl */
+  padding-left: 1rem; padding-right: 1rem; /* px-4 */
+  padding-top: 0.75rem; padding-bottom: 0.75rem; /* py-3 */
+  color: #f4f4f5; /* zinc-100 */
+  --tw-placeholder: #a1a1aa; /* zinc-400 */
+  &::placeholder { color: var(--tw-placeholder); }
+  background-color: rgba(63,63,70,0.6); /* zinc-700/60 */
+  border: 1px solid rgba(82,82,91,0.6); /* zinc-600/60 */
 }
+.input:focus { outline: 2px solid var(--accent); outline-offset: 0; }
 
 .card {
-  @apply rounded-3xl bg-zinc-800/70 border border-zinc-700/50 shadow-xl;
+  border-radius: 1.5rem; /* rounded-3xl */
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); /* shadow-xl */
+  border-width: 1px; border-style: solid;
+  background-color: rgba(39,39,42,0.7); /* zinc-800/70 */
+  border-color: rgba(63,63,70,0.5); /* zinc-700/50 */
 }
 
 

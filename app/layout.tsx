@@ -4,8 +4,13 @@ import "./globals.css";
 export const metadata = {
   title: "Bratgram",
   description: "Chat-roulette messenger",
-};
-
+  icons: {
+    icon: [
+      { url: "/bratgram (2).ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+}
+}
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ru">
