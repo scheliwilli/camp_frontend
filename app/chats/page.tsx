@@ -12,13 +12,13 @@ type ChatListItem = {
 };
 
 export default function ChatsPage() {
-  const [query, setQuery] = useState("***none***");
+  const [query, setQuery] = useState("");
   const [chats, setChats] = useState<ChatListItem[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const load = async () => {
     try {
-      const { data } = await api.get(`/api/user-chats/${encodeURIComponent(query)}`);
+      const { data } = await api.get(`/api/user-chats/${encodeURIComponent(query ? query : "***none***")}`);
       setChats(data.chats || []);
     } catch (e: any) {
       setError(e?.response?.data?.error || "Не удалось загрузить чаты");
