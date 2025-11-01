@@ -12,7 +12,7 @@ type ChatListItem = {
 };
 
 export default function ChatsPage() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("***none***");
   const [chats, setChats] = useState<ChatListItem[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
