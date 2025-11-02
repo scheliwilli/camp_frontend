@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useState, useEffect } from "react";
 import "./globals.css";
 
 export const metadata = {
@@ -14,13 +15,17 @@ export const metadata = {
 
 }
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const [token, setToken] = useState<string | null>("")
+  useEffect(() => {
+    setToken(localStorage.getItem("access_token"))
+  }, [])
   return (
     <html lang="ru">
       <body className="bg-zinc-900 text-zinc-100 font-century antialiased min-h-screen">
         <div className="min-h-screen flex flex-col">
           <header className="h-14 flex items-center px-6 bg-zinc-800/80 border-b border-zinc-700/50">
             {
-              localStorage.getItem("access_token") ? (
+              token ? (
                 <h1>👤</h1>
               ) : ""
             }
