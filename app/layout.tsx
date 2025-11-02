@@ -1,6 +1,4 @@
-"use client"
 import type { ReactNode } from "react";
-import { useState, useEffect } from "react";
 import "./globals.css";
 
 export const metadata = {
@@ -16,10 +14,6 @@ export const metadata = {
 
 }
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const [token, setToken] = useState<string | null>("")
-  useEffect(() => {
-    setToken(localStorage.getItem("access_token"))
-  }, [])
   return (
     <html lang="ru">
       <body className="bg-zinc-900 text-zinc-100 font-century antialiased min-h-screen">
