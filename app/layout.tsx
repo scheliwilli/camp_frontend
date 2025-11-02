@@ -19,11 +19,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-zinc-900 text-zinc-100 font-century antialiased min-h-screen">
         <div className="min-h-screen flex flex-col">
           <header className="h-14 flex items-center px-6 bg-zinc-800/80 border-b border-zinc-700/50">
-            {
-              token ? (
-                <h1>👤</h1>
-              ) : ""
-            }
             <div className="text-2xl font-semibold tracking-wide">Bratgram</div>
           </header>
           <main className="flex-1">{children}</main>
